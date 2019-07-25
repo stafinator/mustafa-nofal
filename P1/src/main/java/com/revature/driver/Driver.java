@@ -3,9 +3,7 @@ package com.revature.driver;
 import java.sql.SQLException;
 
 import com.revature.beans.Reimbursment;
-import com.revature.beans.Users;
 import com.revature.daoimpl.ReimbursmentDAOImpl;
-import com.revature.daoimpl.UsersDAOImpl;
 import com.revature.service.AuthenticationService;
 
 public class Driver {
@@ -14,9 +12,23 @@ public class Driver {
 	
 
 		AuthenticationService au = new AuthenticationService();
-		System.out.println(au.authenticateUser("moh","moh22"));
+		System.out.println(au.authenticateUser("MNOFAL","PASSWORD","employee"));
+		
+		Reimbursment reimb= new Reimbursment(432423, "FSSSSSF", "23", "TTTTTTTYYYYYY",1, "SADs", "sASAss");
+		ReimbursmentDAOImpl rd= new ReimbursmentDAOImpl();
+		
+		try {
+			
+			
+			rd.createReimbursment(reimb);
+	
 		
 		
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		
 		

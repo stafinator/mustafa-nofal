@@ -13,7 +13,7 @@ import com.revature.service.AuthenticationService;
 public class LoginServlet  extends HttpServlet {
 
 	private static AuthenticationService au = new AuthenticationService();
-	//privateprivat UsersDAOImpl udi = new UsersDAOImpl;
+	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		resp.sendRedirect("loginpage.html");
@@ -23,8 +23,9 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 		
 		String username =req.getParameter("username");
 		String password =req.getParameter("password");
+		String position =req.getParameter("position");
 		
-		boolean istrue=au.authenticateUser(username, password);
+		boolean istrue=au.authenticateUser(username, password, position);
 		
 		
 		System.out.println(username);
@@ -33,10 +34,15 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 			
 			HttpSession sess =req.getSession();
 			sess.setAttribute("Users", true);
-			resp.sendRedirect("Employee.html");			
+			if(position.equals("manager")) {
+				resp.sendRedirect("Manager");
+			}else {
+				resp.sendRedirect("Employee");			
+
+			}
 		}		
 		else 			
-			resp.sendRedirect("loginpage.html");		
+			resp.sendRedirect("loginpage");		
 		
 	}
 	

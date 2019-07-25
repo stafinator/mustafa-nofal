@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Forms!</title>
+        <meta name="viewport" content="width=devide-width, intial-scale=1"/>
+        <link rel="stylesheet" type="text/css" href="styles.css"/>
+        <script src="helloJavaScript.js"></script>
+    </head>
+    <body>
+        <form>
+            <fieldset>
+                <legend>Numbers</legend>
+                <!-- I could set step=".01" if i wanted options to increment by hundredths-->
+                <input type="number" id="num1" /><br>
+                <input type="number" id="num2" /><br>
+            </fieldset>
+            <fieldset>
+                <legend>Phrases</legend>
+                <input id="phrase1" /><br>
+                <input id="phrase2" />
+            </fieldset>
+            <button type="button" id="fizzBuzzButton">FizzBuzz!</button>
+        </form>
+    </body>
+    <script>
+    // "window" is the global objet in the browser.
+    // this is applying an event listener to the window, which will execute 
+    window.onload = function(){
+        console.log("hello world!");
+    }
+    // dont write your code here! It titghtly couples your JS with your HTML.
+    // bad for modularity and maintainability (and sanity)
+    </script>
+    </html>

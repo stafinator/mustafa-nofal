@@ -57,7 +57,7 @@ public class UsersDAOImpl implements UserDAO {
 	
 	public Users getUser(String username) {
 	 Users user = new Users();
-		String sql="select USERS_USERNAME, USERS_PASSWORD from ers_users where USERS_USERNAME = ?";
+		String sql="select USERS_USERNAME, USERS_PASSWORD, USERS_ID from ers_users where USERS_USERNAME = ?";
 		
 		PreparedStatement stmt;
 		
@@ -71,6 +71,7 @@ public class UsersDAOImpl implements UserDAO {
 			while(rs.next()) {
 				user.setUsername(rs.getString(1));
 				user.setPassword(rs.getString(2));
+				user.setUser_id(rs.getInt(3));
 		
 			}
 			

@@ -27,6 +27,7 @@ public class Employee extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		response.sendRedirect("Employee.html");
+		System.out.println("it worked");
 	}
 
 	/**

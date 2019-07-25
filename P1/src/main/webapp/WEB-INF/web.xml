@@ -41,4 +41,54 @@
     <servlet-name>Manager</servlet-name>
     <url-pattern>/Manager</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SubmitRequestEmpServlet</display-name>
+    <servlet-name>SubmitRequestEmpServlet</servlet-name>
+    <servlet-class>com.revature.servlet.SubmitRequestEmpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SubmitRequestEmpServlet</servlet-name>
+    <url-pattern>/SubmitRequestEmp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ViewRequestEmpServlet</display-name>
+    <servlet-name>ViewRequestEmpServlet</servlet-name>
+    <servlet-class>com.revature.servlet.ViewRequestEmpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewRequestEmpServlet</servlet-name>
+    <url-pattern>/ViewRequestEmp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EditInfoEmpServlet</display-name>
+    <servlet-name>EditInfoEmpServlet</servlet-name>
+    <servlet-class>com.revature.servlet.EditInfoEmpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditInfoEmpServlet</servlet-name>
+    <url-pattern>/EditInfoEmp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ViewRequestMgrServlet</display-name>
+    <servlet-name>ViewRequestMgrServlet</servlet-name>
+    <servlet-class>com.revature.servlet.ViewRequestMgrServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewRequestMgrServlet</servlet-name>
+    <url-pattern>/ViewRequestMgr</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ViewTeamMgrServlet</display-name>
+    <servlet-name>ViewTeamMgrServlet</servlet-name>
+    <servlet-class>com.revature.servlet.ViewTeamMgrServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewTeamMgrServlet</servlet-name>
+    <url-pattern>/ViewTeamMgr</url-pattern>
+  </servlet-mapping>
 </web-app>

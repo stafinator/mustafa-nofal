@@ -3,38 +3,80 @@ package com.revature.beans;
 import java.sql.Blob;
 
 public class Reimbursment {
-
+	
+	
 	private int reimb_id;
+	private int user_id     ;
 	private double reimb_amount;
 	private String reimb_submitted;
 	private String reimb_resolved;
 	private String reimb_description;
 	private Blob reimb_reciept;
-	private int reimb_author;
 	private int reimb_resolver;
 	private String reimb_status;
 	private String reimb_type;
 	
+	public Reimbursment(double reimb_amount, String reimb_description, String reimb_type) {
+		super();
+		this.reimb_amount = reimb_amount;
+		this.reimb_description = reimb_description;
+		this.reimb_type = reimb_type;
+	}
+
+
 	public Reimbursment() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Reimbursment(double reimb_amount, String reimb_submitted, String reimb_resolved,
-			String reimb_description, int reimb_author, int reimb_resolver, String reimb_status,
-			String reimb_type) {
+
+	public Reimbursment(double reimb_amount, String reimb_submitted, String reimb_resolved, String reimb_description,
+			int reimb_resolver, String reimb_status, String reimb_type) {
 		super();
-		//this.reimb_id = reimb_id;
 		this.reimb_amount = reimb_amount;
 		this.reimb_submitted = reimb_submitted;
 		this.reimb_resolved = reimb_resolved;
 		this.reimb_description = reimb_description;
-		//this.reimb_reciept = reimb_reciept;
-		this.reimb_author = reimb_author;
 		this.reimb_resolver = reimb_resolver;
 		this.reimb_status = reimb_status;
 		this.reimb_type = reimb_type;
 	}
+
+
+	public Reimbursment(int reimb_id, int user_id, double reimb_amount, String reimb_submitted, String reimb_resolved,
+			String reimb_description, Blob reimb_reciept, int reimb_resolver, String reimb_status, String reimb_type) {
+		super();
+		this.reimb_id = reimb_id;
+		this.user_id = user_id;
+		this.reimb_amount = reimb_amount;
+		this.reimb_submitted = reimb_submitted;
+		this.reimb_resolved = reimb_resolved;
+		this.reimb_description = reimb_description;
+		this.reimb_reciept = reimb_reciept;
+		this.reimb_resolver = reimb_resolver;
+		this.reimb_status = reimb_status;
+		this.reimb_type = reimb_type;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Reimbursment [reimb_id=" + reimb_id + ", user_id=" + user_id + ", reimb_amount=" + reimb_amount
+				+ ", reimb_submitted=" + reimb_submitted + ", reimb_resolved=" + reimb_resolved + ", reimb_description="
+				+ reimb_description + ", reimb_reciept=" + reimb_reciept + ", reimb_resolver=" + reimb_resolver
+				+ ", reimb_status=" + reimb_status + ", reimb_type=" + reimb_type + "]";
+	}
+
+
+	public int getUser_id() {
+		return user_id;
+	}
+
+
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
+	}
+
 
 	public int getReimb_id() {
 		return reimb_id;
@@ -84,13 +126,7 @@ public class Reimbursment {
 		this.reimb_reciept = reimb_reciept;
 	}
 
-	public int getReimb_author() {
-		return reimb_author;
-	}
 
-	public void setReimb_author(int reimb_author) {
-		this.reimb_author = reimb_author;
-	}
 
 	public int getReimb_resolver() {
 		return reimb_resolver;
@@ -123,7 +159,7 @@ public class Reimbursment {
 		long temp;
 		temp = Double.doubleToLongBits(reimb_amount);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		result = prime * result + reimb_author;
+
 		result = prime * result + ((reimb_description == null) ? 0 : reimb_description.hashCode());
 		result = prime * result + reimb_id;
 		result = prime * result + ((reimb_reciept == null) ? 0 : reimb_reciept.hashCode());
@@ -146,8 +182,7 @@ public class Reimbursment {
 		Reimbursment other = (Reimbursment) obj;
 		if (Double.doubleToLongBits(reimb_amount) != Double.doubleToLongBits(other.reimb_amount))
 			return false;
-		if (reimb_author != other.reimb_author)
-			return false;
+		
 		if (reimb_description == null) {
 			if (other.reimb_description != null)
 				return false;
@@ -185,13 +220,7 @@ public class Reimbursment {
 		return true;
 	}
 
-	@Override
-	public String toString() {
-		return "Reimbursment [reimb_id=" + reimb_id + ", reimb_amount=" + reimb_amount + ", reimb_submitted="
-				+ reimb_submitted + ", reimb_resolved=" + reimb_resolved + ", reimb_description=" + reimb_description
-				+ ", reimb_reciept=" + reimb_reciept + ", reimb_author=" + reimb_author + ", reimb_resolver="
-				+ reimb_resolver + ", reimb_status=" + reimb_status + ", reimb_type=" + reimb_type + "]";
-	}
+
 	
 	
 }
